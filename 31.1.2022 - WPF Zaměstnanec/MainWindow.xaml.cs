@@ -35,10 +35,16 @@ namespace _31._1._2022___WPF_Zaměstnanec
 
         private void Read_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(DPBirthdate.SelectedDate.Value.ToString());
+            //MessageBox.Show(DPBirthdate.SelectedDate.Value.ToString());
             
             string[] Content = File.ReadAllText(path).Split(',');
-            (string)TxName = Content[0];
+            TxName.Text = Content[0];
+            TxSurname.Text = Content[1];
+            DPBirthdate.SelectedDate = DateTime.Parse(Content[2]);
+            CBEducation.SelectedIndex = Convert.ToInt32(Content[3]);
+            TxJob.Text = Content[4];
+            TxSalary.Text = Content[5];
+                
         }
     }
     public class Human {
