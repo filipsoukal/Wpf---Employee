@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.IO;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -21,6 +22,23 @@ namespace _31._1._2022___WPF_Zaměstnanec
         public MainWindow()
         {
             InitializeComponent();
+            
+
+        }
+        const string path = "Employee.txt";
+        private void Write_Click(object sender, RoutedEventArgs e)
+        {
+            Employee Emp = new Employee(TxName.Text, TxSurname.Text, DPBirthdate.SelectedDate.Value, CBEducation.SelectedIndex, TxJob.Text,Convert.ToDouble(TxSalary.Text));
+            File.Delete(path);
+            File.WriteAllText(path,Emp.ToString());
+        }
+
+        private void Read_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(DPBirthdate.SelectedDate.Value.ToString());
+            
+            string[] Content = File.ReadAllText(path).Split(',');
+            (string)TxName = Content[0];
         }
     }
     public class Human {
@@ -43,8 +61,10 @@ namespace _31._1._2022___WPF_Zaměstnanec
         public string Job { get; set; }
         public double GrossSalary { get; set; }
 		public override string ToString() {
-			
-            return base.ToString(); //https://github.com/RonStudeny/Employee-Form.git
+            string EmployeeToString = Name + "," + Surname + "," + BirthDate.ToString() + "," + Education.ToString() + "," + Job + "," + GrossSalary;
+            
+            
+            return EmployeeToString;
 		}
 	}
 }

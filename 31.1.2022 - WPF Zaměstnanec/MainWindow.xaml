@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_31._1._2022___WPF_Zaměstnanec"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    
+        Title="MainWindow" Height="450" Width="800" MinWidth="800" MinHeight="450">
+
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
@@ -17,7 +21,37 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Button Grid.Column="1" Grid.Row="1" Height="50" Width="100"/>
+        <Button Grid.Column="2" Grid.Row="8" Content="Read from File" Click="Read_Click"/>
+        <Button Grid.Column="3" Grid.Row="8" Width="100" Margin="96 0 0 0" Content="Write to File" Click="Write_Click"/>
+        <Label Grid.Column="2" Grid.Row="1">Name</Label>
+        <Label Grid.Column="2" Grid.Row="2">Surname</Label>
+        <Label Grid.Column="2" Grid.Row="3">Date of Birth</Label>
+        <Label Grid.Column="2" Grid.Row="4">Education</Label>
+        <Label Grid.Column="2" Grid.Row="5">Job</Label>
+        <Label Grid.Column="2" Grid.Row="6">Gross Salary</Label>
+        <TextBox Grid.Column="3" Grid.Row="1" x:Name="TxName"> </TextBox>
+        <TextBox Grid.Column="3" Grid.Row="2" Name="TxSurname"></TextBox>
+        <DatePicker Grid.Column="3" Grid.Row="3" Name="DPBirthdate"></DatePicker>
+        <ComboBox Grid.Column="3" Grid.Row="4" Name="CBEducation">
+            <ComboBoxItem Content="None"/>
+            <ComboBoxItem Content="Elementary"/>
+            <ComboBoxItem Content="High school"/>
+            <ComboBoxItem Content="College"/>
+            <ComboBoxItem Content="University"/>
+        </ComboBox>
+        <TextBox Grid.Column="3" Grid.Row="5" Name="TxJob"></TextBox>
+        <TextBox Grid.Column="3" Grid.Row="6" Name="TxSalary"></TextBox>
+
     </Grid>
 </Window>
