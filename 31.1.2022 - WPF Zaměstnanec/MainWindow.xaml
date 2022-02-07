@@ -18,6 +18,6 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Button Grid.Column="1" Grid.Row="1" Height="50" Width="100"/>
+        <Button Content="Klikni" Grid.Column="1" Grid.Row="1" Height="50" Width="100"/>
     </Grid>
 </Window>
